@@ -50,7 +50,8 @@ console.log(Math.floor(totalPrice) % 2 === 0);
 
 // Виведіть суму решти, при оплаті всіх товарів (без округлення), якщо клієнт платить 500 грн.
 
-let change = 500 - totalPrice;
+let pay = 500;
+const change = pay - totalPrice;
 
 console.log(change);
 
