@@ -57,21 +57,21 @@ console.log(change);
 
 // Виведіть середнє значення цін, округлене до другого знаку після коми
 
-let averagePrice = (totalPrice / 3).toFixed(2);
+let averagePrice = +(totalPrice / 3).toFixed(2);
 
 console.log(averagePrice);
 
 /*(Більш складне) Створіть змінну, в якої збережіть випадкову знижку (використовуйте функцію Math.random).
 Зробіть клієнту випадкову знижку та виведіть суму до оплати округлену до 2 знаків після коми. */
 
-let randomDiscount = Math.random().toFixed(2);
-let totalPriceWithDiscount = (totalPrice * (1 - randomDiscount)).toFixed(2);
+let randomDiscount = +Math.random().toFixed(2);
+let totalPriceWithDiscount = +(totalPrice * (1 - randomDiscount)).toFixed(2);
 
 console.log(totalPriceWithDiscount);
 
 // Виведіть чистий прибуток, якщо клієнт заплатив зі знижкою та собівартість товарів рівно в два рази нижче їх ціни?
 
-let profit = (totalPriceWithDiscount - totalPrice / 2).toFixed(2);
+let profit = +(totalPriceWithDiscount - totalPrice / 2).toFixed(2);
 
 console.log(profit);
 
