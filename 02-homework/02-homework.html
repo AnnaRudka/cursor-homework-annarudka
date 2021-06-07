@@ -5,10 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./02-style.css" />
     <title>AnnaRudka_Homework#2</title>
 </head>
-
 <body>
+    <div class="container">
+    <h3>Для підрахунку суми чисел в бажаному діапазоні, введіть будь ласка початкове та кінцеве значеня:</h3>
+    <form>
+        <div>
+            <label for="start">Почати додавати з:</label>
+            <input type="text" id="start">
+        </div>
+        <div>
+            <label for="end">Закінчити (включно):</label>
+            <input type="text" id="end">
+        </div>
+        <div>
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox">Чи пропускати парні числа?</label>
+    </div>
+    <button type="submit">Розрахувати</button>
+    </form>
+    <div class="output"></div>
+    </div>
     <script src="./02-homework.js"></script>
 </body>
 

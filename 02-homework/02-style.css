@@ -1,0 +1,16 @@
+.container {
+  max-width: 1000px;
+  min-height: 420px;
+  background-image: url("./image.jpg");
+  line-height: 2;
+}
+
+h3 {
+  color: rgb(5, 5, 187);
+  max-width: 300px;
+}
+.output {
+  color: rgb(168, 11, 116);
+  font-size: 1.17em;
+  font-weight: bold;
+}
