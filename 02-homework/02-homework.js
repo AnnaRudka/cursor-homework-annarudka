@@ -37,7 +37,7 @@ form.addEventListener("submit", (event) => {
       sum += i; // Розраховуємо суму чисел в діапазоні
     }
     // Виводимо результат користувачу
-    output.innerHTML = `Сума чисел в діапазоні:  ${sum}`;
+    output.innerHTML = `Сума чисел в діапазоні з ${startValue} до ${endValue}:  ${sum}`;
   }
   form.reset(); // Очищаємо форму
 });
