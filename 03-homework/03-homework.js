@@ -4,7 +4,7 @@ const output01 = document.querySelector(".output01");
 
 document.querySelector(".btn1").addEventListener("click", (event) => {
   const number = Math.abs(+document.querySelector("#input01").value); // Отримаємо число від користувача (не враховуємо "-")
-  if (number === "" || isNaN(number01)) {
+  if (number === "" || isNaN(number)) {
     // Перевіряємо чи число валідне
     alert("Будь ласка введіть число");
   } else {
