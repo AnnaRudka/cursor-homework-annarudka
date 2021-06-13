@@ -120,8 +120,8 @@ document.querySelector(".btn7").addEventListener("click", () => {
 
 const output08 = document.querySelector(".output08");
 
-document.querySelector(".btn8").addEventListener("click", (quantity = 8) => {
-  quantity = document.querySelector("#input08").value; // Отримаємо дані від користувача
+document.querySelector(".btn8").addEventListener("click", () => {
+  const quantity = document.querySelector("#input08").value || 8; // Отримаємо дані від користувача
   let password = "";
   for (let i = 0; i < quantity; i++) {
     let number = Math.floor(Math.random() * 10); // Генеруємо випадкове число від 1 до 9
