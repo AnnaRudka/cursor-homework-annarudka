@@ -42,7 +42,11 @@ document.querySelector(".btn2").addEventListener("click", () => {
 const output03 = document.querySelector(".output03");
 
 document.querySelector(".btn3").addEventListener("click", () => {
-  const incorrectName = document.querySelector("#input03").value.toLowerCase();
+  const incorrectName = document
+    .querySelector("#input03")
+    .value.toLowerCase()
+    .replace(/\d/g, "");
+
   let correctName = incorrectName[0].toUpperCase() + incorrectName.slice(1);
   output03.innerHTML = `Правильний формат імені: ${correctName}`;
 });
@@ -88,8 +92,8 @@ document.querySelector(".btn5").addEventListener("click", () => {
 const output06 = document.querySelector(".output06");
 
 document.querySelector(".btn6").addEventListener("click", () => {
-  const word = document.querySelector("#input06-first").toLowerCase(); // Отримаємо дані від користувача
-  const letter = document.querySelector("#input06-second").toLowerCase();
+  const word = document.querySelector("#input06-first").value.toLowerCase(); // Отримаємо дані від користувача
+  const letter = document.querySelector("#input06-second").value.toLowerCase();
   let quantity = word.split(letter).length - 1;
   output06.innerHTML = `Кількість повторів літери ${letter} в слові ${word}: ${quantity}`;
 });
@@ -112,6 +116,7 @@ document.querySelector(".btn7").addEventListener("click", () => {
     currency = "UAH";
   } else {
     output07.innerHTML = "Будь ласка введіть суму у UAH або $";
+    return;
   }
   output07.innerHTML = `Ви отримаєте: ${amountAfterExchange} ${currency}`;
 });
@@ -163,15 +168,16 @@ const output11 = document.querySelector(".output11");
 
 document.querySelector(".btn11").addEventListener("click", () => {
   const sentence = document.querySelector("#input11").value; // Отримаємо дані від користувача
-  let newSentence = "";
+  const newSentence = sentence.toLowerCase();
+  let result = "";
   for (let i = 0; i < sentence.length; i++) {
     // Перевіряємо в циклі чи індекс символу = останньому індексу цього символу
     if (
-      sentence.toLowerCase().indexOf(sentence[i]) ===
-      sentence.lastIndexOf(sentence[i].toLowerCase())
+      newSentence.indexOf(newSentence[i]) ===
+      newSentence.lastIndexOf(newSentence[i])
     ) {
-      newSentence += sentence[i];
+      result += sentence[i];
     }
   }
-  output11.innerHTML = `Речення без букв, що повторюються: ${newSentence}`;
+  output11.innerHTML = `Речення без букв, що повторюються: ${result}`;
 });
