@@ -1,0 +1,11 @@
+body {
+  background-image: url("../images/5.png");
+  background-size: 100%;
+  line-height: 2;
+}
+.output {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  margin: 10px;
+  min-height: 95vh;
+}
