@@ -5,17 +5,30 @@ const themes = [
   "Алгоритми і структури даних",
 ];
 const marks = [4, 5, 5, 3, 4, 5];
-const output = document.querySelector(".output");
+const outputs = document.querySelectorAll(".output");
 
 // Розділіть студентів на пари(хлопець + дівчина) для роботи над проєктом.
+
 function getPairs(students) {
-  return [
-    [students[0], students[2]],
-    [students[1], students[3]],
-    [students[4], students[5]],
-  ];
+  let maleStudents = [];
+  let femaleStudents = [];
+  let result = [];
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].charAt(students[i].length - 1) === "а") {
+      femaleStudents.push(students[i]);
+    } else {
+      maleStudents.push(students[i]);
+    }
+  }
+  for (let i = 0; i < 3; i++) {
+    result.push([maleStudents[i], femaleStudents[i]]);
+  }
+  return result;
 }
 const pairs = getPairs(students);
+for (let i = 0; i < pairs.length; i++) {
+  outputs[0].innerHTML += `<li>${pairs[i]}</li>`;
+}
 
 // Зіставте пари з попереднього завдання та теми проєктів, над якими студенти будуть працювати.
 
@@ -27,6 +40,9 @@ function getStudentThemes(pairs, themes) {
   return result;
 }
 const studentThemes = getStudentThemes(pairs, themes);
+for (let i = 0; i < studentThemes.length; i++) {
+  outputs[1].innerHTML += `<li>${studentThemes[i]}</li>`;
+}
 
 // Зіставте оцінки(marks) зі студентом(students): [["Саша", 4], [...], [...]]
 
@@ -38,6 +54,9 @@ function getStudentMarks(students, marks) {
   return result;
 }
 const studentMarks = getStudentMarks(students, marks);
+for (let i = 0; i < studentMarks.length; i++) {
+  outputs[2].innerHTML += `<li>${studentMarks[i]}</li>`;
+}
 
 // Поставте кожній парі випадкову оцінку(від 1 до 5) за проєкт(тут функція буде нечистою, але не повинна мутувати массив)
 
@@ -50,29 +69,6 @@ function getMarksForPairs(studentThemes) {
   return result;
 }
 const marksForPairs = getMarksForPairs(studentThemes);
-
-output.innerHTML = `
-<ul>1.Пари студентів:
-<li>${pairs[0]}</li>
-<li>${pairs[1]}</li>
-<li>${pairs[2]}</li>
-</ul>
-<ul>2.Пари студентів і назви проектів:
-<li>${studentThemes[0]}</li>
-<li>${studentThemes[1]}</li>
-<li>${studentThemes[2]}</li>
-</ul>
-<ul>3.Оцінки студентів::
-<li>${studentMarks[0]}</li>
-<li>${studentMarks[1]}</li>
-<li>${studentMarks[2]}</li>
-<li>${studentMarks[3]}</li>
-<li>${studentMarks[4]}</li>
-<li>${studentMarks[5]}</li>
-</ul>
-<ul>4.Оцінки пар студентів::
-<li>${marksForPairs[0]}</li>
-<li>${marksForPairs[1]}</li>
-<li>${marksForPairs[2]}</li>
-</ul>
-`;
+for (let i = 0; i < marksForPairs.length; i++) {
+  outputs[3].innerHTML += `<li>${marksForPairs[i]}</li>`;
+}
