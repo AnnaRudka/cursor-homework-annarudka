@@ -1,5 +1,5 @@
 const outputs = document.querySelectorAll(".output");
-let array = [15, 10, 4, 30, 8, 2, 9, 14, 6, 2, 3, 2, 6];
+let array = [15, 10, 4, 30, 8, 2, 9, 14, 6, 2, 3, 2, 6, 3, 3];
 
 // 1. Створіть функцію getRandomArray(length, min, max) – яка повертає масив випадкових цілих чисел.
 
@@ -23,6 +23,29 @@ document.querySelector(".btn1").addEventListener("click", () => {
   }
 });
 
+// Створіть функцію getModa(...numbers) – яка вираховує моду всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
+
+document.querySelector(".btn2").addEventListener("click", () => {
+  const arrayOfIntegers = array.filter((element) => Number.isInteger(element));
+  let frequency = [];
+  let maxfrequency = 0;
+  let modes = [];
+  for (let i in arrayOfIntegers) {
+    frequency[arrayOfIntegers[i]] = (frequency[arrayOfIntegers[i]] || 0) + 1; // increment frequency.
+
+    if (frequency[arrayOfIntegers[i]] > maxfrequency) {
+      // is this frequency > max so far ?
+      maxfrequency = frequency[arrayOfIntegers[i]]; // update max.
+    }
+  }
+  for (let j in frequency) {
+    if (frequency[j] == maxfrequency) {
+      modes.push(j);
+    }
+  }
+  outputs[1].innerHTML = `Моди масиву : ${modes}`;
+});
+
 // 3.Створіть функцію getAverage(...numbers) – яка рахує середнє арифметичне всіх переданих в неї аргументів.
 
 document.querySelector(".btn3").addEventListener("click", () => {
@@ -32,7 +55,7 @@ document.querySelector(".btn3").addEventListener("click", () => {
     sum += element;
   }
   let averageValue = sum / arrayOfIntegers.length;
-  outputs[1].innerHTML = `Середнє арифметичне чисел в масиві = ${averageValue}`;
+  outputs[2].innerHTML = `Середнє арифметичне чисел в масиві = ${averageValue}`;
 });
 
 // 4. Створіть функцію getMedian(...numbers) – яка рахує медіану всіх переданих в неї аргументів.
@@ -53,28 +76,28 @@ document.querySelector(".btn4").addEventListener("click", () => {
   } else {
     median = arrayOfIntegers[Math.floor(middleOfArray)];
   }
-  outputs[2].innerHTML = `Медіана масиву = ${median}`;
+  outputs[3].innerHTML = `Медіана масиву = ${median}`;
 });
 
 // 5. Створіть функцію filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції
 
 document.querySelector(".btn5").addEventListener("click", () => {
   let arrayOfOdd = array.filter((element) => element % 2 !== 0);
-  outputs[3].innerHTML = `Масив без парних чисел: ${arrayOfOdd}`;
+  outputs[4].innerHTML = `Масив без парних чисел: ${arrayOfOdd}`;
 });
 
 // 6.Створіть функцію countPositiveNumbers(...numbers) – яка порахує кількість чисел більших 0
 
 document.querySelector(".btn6").addEventListener("click", () => {
   let lengthArrayOfPositive = array.filter((element) => element > 0).length;
-  outputs[4].innerHTML = `Кількість додатніх чисел в масиві: ${lengthArrayOfPositive}`;
+  outputs[5].innerHTML = `Кількість додатніх чисел в масиві: ${lengthArrayOfPositive}`;
 });
 
 // 7.Створіть функцію getDividedByFive(...numbers) – яка відфільтрує усі елементи в масиві та залишить тільки ті, які діляться на ціло на 5
 
 document.querySelector(".btn7").addEventListener("click", () => {
   let arrayOfDividedByFive = array.filter((element) => element % 5 == 0);
-  outputs[5].innerHTML = `Числа, що кратні 5: ${arrayOfDividedByFive}`;
+  outputs[6].innerHTML = `Числа, що кратні 5: ${arrayOfDividedByFive}`;
 });
 
 // 8. Створіть функцію, яка 1) розіб'є фразу на слова, 2) замінить погані слова на зірочки (*).
@@ -98,7 +121,7 @@ document.querySelector(".btn8").addEventListener("click", () => {
       );
     }); //В кожному слові масиву робимо заміну поганої частини слова (+ варіант користувача)
     correctSentence = arrayOfCorrectWords.join(" "); // Об"єднуємо відредаговані слова з масиву в нове речення
-    outputs[6].innerHTML = `Відредаговане речення: ${correctSentence}`;
+    outputs[7].innerHTML = `Відредаговане речення: ${correctSentence}`;
   }
 });
 
@@ -112,5 +135,5 @@ document.querySelector(".btn9").addEventListener("click", () => {
     [a, b, c, ...arrayOfletters] = arrayOfletters; // Використовуємо деструктуризацію масиву для об'єднання елементів по 3
     result.push(a + b + c);
   }
-  outputs[7].innerHTML = `Слово ${word} складається з таких складів: ${result}`;
+  outputs[8].innerHTML = `Слово ${word} складається з таких складів: ${result}`;
 });
