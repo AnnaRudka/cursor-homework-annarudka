@@ -68,9 +68,9 @@ document.querySelector(".btn3").addEventListener("click", () => {
 
 function getStudentInfo() {
   // Формуємо масив з інформацією по всіх студентах
-  return students.map((student, index) => ({
-    name: student.name,
-    course: student.course,
+  return students.map(({ name, course }, index) => ({
+    name,
+    course,
     averageMark: getAverageMark(index),
   }));
 }
@@ -113,7 +113,7 @@ document.querySelector(".btn6").addEventListener("click", () => {
       quantityOfLetters[word[i]] = word.split(word[i]).length - 1; // Вносимо в масив дані літери і кількості повторів в слові
     }
 
-    outputs[5].innerHTML = `Кількість букв в слові ${word}: ${JSON.stringify(
+    outputs[5].innerHTML = `Кількість літер в слові ${word}: ${JSON.stringify(
       quantityOfLetters,
       null,
       2
