@@ -45,25 +45,30 @@ document.querySelector(".btn").addEventListener("click", () => {
     let totalTaxes = 0;
     let myprofit = {};
     let img = "";
+    let timerId = 0;
+    setTimeout(() => {
+      clearInterval(timerId);
+    }, 15000);
     switch (country) {
       case "ukraine":
         img = '<img src="./assets/images/ukraine.jpg">';
         myTaxes = getMyTaxes.call(ukraine, salary);
         middleTaxes = getMiddleTaxes.call(ukraine);
         totalTaxes = getTotalTaxes.call(ukraine);
-        setInterval(() => {
+        timerId = setInterval(() => {
           myprofit = JSON.stringify(getMySalary.call(ukraine), null, 2);
-          outputs[3].innerHTML = `Рандомні дані по країні ${myprofit}`;
+          outputs[3].innerHTML = `${img} Рандомні дані по країні ${myprofit}`;
         }, 10000);
+        console.log(timerId);
         break;
       case "latvia":
         img = '<img src="./assets/images/latvia.png">';
         myTaxes = getMyTaxes.call(latvia, salary);
         middleTaxes = getMiddleTaxes.call(latvia);
         totalTaxes = getTotalTaxes.call(latvia);
-        setInterval(() => {
+        timerId = setInterval(() => {
           myprofit = JSON.stringify(getMySalary.call(latvia), null, 2);
-          outputs[3].innerHTML = `Рандомні дані по країні ${myprofit}`;
+          outputs[3].innerHTML = `${img} Рандомні дані по країні ${myprofit}`;
         }, 10000);
         break;
       case "litva":
@@ -71,9 +76,9 @@ document.querySelector(".btn").addEventListener("click", () => {
         myTaxes = getMyTaxes.call(litva, salary);
         middleTaxes = getMiddleTaxes.call(litva);
         totalTaxes = getTotalTaxes.call(litva);
-        setInterval(() => {
+        timerId = setInterval(() => {
           myprofit = JSON.stringify(getMySalary.call(litva), null, 2);
-          outputs[3].innerHTML = `Рандомні дані по країні ${myprofit}`;
+          outputs[3].innerHTML = `${img} Рандомні дані по країні ${myprofit}`;
         }, 10000);
     }
     outputs[0].innerHTML = `${img} В цій країні з ${salary} $ ви заплатите ${myTaxes} $ податку`;
