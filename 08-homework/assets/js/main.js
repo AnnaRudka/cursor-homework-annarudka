@@ -5,28 +5,25 @@ class Student {
     this.course = course;
     this.fullname = fullname;
     this.marks = [5, 5];
-    this.status = status;
+    this.isActive = true;
   }
   getInfo() {
     //Метод повертає сукупну інформацію про студента
-    this.status === "dissmissed"
-      ? console.log(null, `Студент ${this.fullname} виключений`)
-      : console.log(
+    this.isActive
+      ? console.log(
           `Студент ${this.course}го курсу ${this.university}, ${this.fullname}`
-        );
+        )
+      : console.log(null, `Студент ${this.fullname} виключений`);
   }
-  get getMarks() {
+  get studentMarks() {
     //Геттер оцінок
-    this.status === "dissmissed"
-      ? console.log(null, `Студент ${this.fullname} виключений`)
-      : console.log(`Оцінки студента: ${this.marks}`);
+    console.log(`Оцінки студента: ${this.marks}`);
   }
-  set newMark(mark) {
+  set studentMarks(mark) {
     // Сеттер оцінок
-    this.status === "dissmissed"
-      ? console.log(null, `Студент ${this.fullname} виключений`)
-      : this.marks.push(mark);
-    console.log(`Оновлені оцінки студента: ${this.marks}`);
+    this.isActive
+      ? this.marks.push(mark)
+      : console.log(null, `Студент ${this.fullname} виключений`);
   }
   getAverageMark() {
     // метод отримання середнього балу
@@ -36,27 +33,27 @@ class Student {
   }
   dismissStudent() {
     // Метод виключення студента (унеможливлює отримання загальної інформації і нові оцінки )
-    this.status = "dissmissed";
+    this.isActive = false;
   }
   recoverStudent() {
     // Метод поновлення студента
-    this.status = "recovered";
+    this.isActive = true;
   }
 }
 
 const orest = new Student("Harvard University", 1, "Orest Rudka");
 orest.getInfo();
-orest.getMarks;
-orest.newMark = 5;
-orest.getMarks;
+orest.studentMarks;
+orest.studentMarks = 5;
+orest.studentMarks;
 console.log(orest.getAverageMark());
 orest.dismissStudent();
-orest.newMark = 4;
-orest.getMarks;
+orest.studentMarks = 4;
+orest.studentMarks;
 console.log(orest.getAverageMark());
 orest.recoverStudent();
-orest.newMark = 4;
-orest.getMarks;
+orest.studentMarks = 4;
+orest.studentMarks;
 console.log(orest.getAverageMark());
 
 // Advanced
@@ -70,9 +67,9 @@ class BudgetStudent extends Student {
   getScholarship() {
     // Метод отримання стипендії за умови активного статусу і високого середнього балу
     const scholarship = 1400;
-    this.status === "dissmissed" || this.getAverageMark() < 4
-      ? console.log(`У ${this.fullname} немає стипендії`)
-      : console.log(`Ви отримали ${scholarship} грн. стипендії`);
+    this.isActive && this.getAverageMark() >= 4
+      ? console.log(`Ви отримали ${scholarship} грн. стипендії`)
+      : console.log(`У ${this.fullname} немає стипендії`);
   }
 }
 
