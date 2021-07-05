@@ -1,0 +1,11 @@
+.container {
+  margin: 20px;
+  line-height: 2;
+}
+.container-blocks {
+  display: flex;
+  flex-wrap: wrap;
+}
+.label {
+  width: 150px;
+}

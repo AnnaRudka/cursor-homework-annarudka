@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>AnnaRudka_Homework#9</title>
+</head>
+<body>
+    <div class="container">
+    <section class="container_menu">
+        <h3> Please select options</h3>
+        <div>
+            <label for="size">Size of the blocks, px</label>
+            <input type="range" id="size" name="size" min="1" max="100">
+            <span class="output"></span>
+        </div>
+        <div>
+            <label for="columns">Number of columns (1-10) </label>
+            <input type="range" id="columns" name="columns" min="1" max="10">
+            <span class="output"></span>
+        </div>
+        <div>
+            <label for="rows">Number of rows  (1-10)</label>
+            <input type="range" id="rows" name="rows" min="1" max="10">
+            <span class="output"></span>
+        </div>
+        <button class="btn1" type="submit">Generate blocks</button>
+        <button class="btn2" type="submit">Generate blocks with 1 second interval</button>
+    </section>
+    <div class="container-blocks"></div>
+    </div>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
