@@ -3,6 +3,7 @@ const container = document.querySelector(".container-blocks");
 const size = document.getElementById("size");
 const columns = document.getElementById("columns");
 const rows = document.getElementById("rows");
+let timerId;
 
 size.addEventListener("input", () => {
   outputs[0].innerHTML = size.value;
@@ -14,7 +15,7 @@ rows.addEventListener("input", () => {
   outputs[2].innerHTML = rows.value;
 });
 
-const generateBlocks = () => {
+function generateBlocks() {
   container.innerHTML = "";
   container.style.width = `${columns.value * size.value}px`;
 
@@ -31,10 +32,13 @@ const generateBlocks = () => {
 
     container.append(block);
   }
-};
-const generateBlocksInterval = () => {
-  setInterval(() => generateBlocks(), 1000);
-};
+}
+
+function generateBlocksInterval() {
+  generateBlocks();
+  clearTimeout(timerId);
+  timerId = setInterval(() => generateBlocks(), 1000);
+}
 
 document.querySelector(".btn1").addEventListener("click", generateBlocks);
 document
