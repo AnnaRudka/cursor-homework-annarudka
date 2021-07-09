@@ -1,0 +1,79 @@
+.img-block {
+  background-image: url("../images/ksylofon.jpg");
+  min-height: 640px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.keys {
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 24px;
+}
+
+.key {
+  margin: 6px;
+  font-size: 0.6rem;
+  transition: all 0.07s ease;
+  width: 3rem;
+  text-align: center;
+  color: #2a012e;
+  font-weight: 600;
+}
+
+.key1 {
+  padding: 208px 16px 245px 16px;
+}
+.key2 {
+  margin-top: 20px;
+  padding: 200px 16px 227px 16px;
+}
+.key3 {
+  margin-top: 35px;
+  padding: 184px 16px 210px 16px;
+}
+.key4 {
+  margin-top: 50px;
+  padding: 170px 16px 190px 16px;
+}
+.key5 {
+  margin-top: 62px;
+  padding: 157px 16px 175px 16px;
+}
+.key6 {
+  margin-top: 76px;
+  padding: 145px 16px 168px 16px;
+}
+.key7 {
+  margin-top: 85px;
+  padding: 135px 16px 153px 16px;
+}
+.key8 {
+  margin-top: 98px;
+  padding: 125px 16px 137px 16px;
+}
+.key9 {
+  margin-top: 115px;
+  padding: 110px 16px 125px 16px;
+}
+.playing {
+  transform: scale(1.01);
+  border-color: #ffc80070;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 2rem #ffc600;
+}
+
+kbd {
+  display: block;
+  font-size: 4rem;
+}
+
+.sound {
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+  color: #2a012e;
+}
