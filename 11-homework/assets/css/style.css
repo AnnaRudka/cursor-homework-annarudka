@@ -1,0 +1,29 @@
+.container {
+  background-image: url("../images/tmb_163531_9812.jpg");
+  min-width: 1200px;
+  min-height: 600px;
+  color: rgb(255, 255, 255);
+  line-height: 2;
+  font-size: 18px;
+  background-repeat: no-repeat;
+  margin: 0 135px;
+  padding: 10px;
+}
+.container-item {
+  /*background: rgba(0, 0, 0, 0.7);*/
+  max-width: 30%;
+  overflow: auto;
+  /*border: deepskyblue 2px solid transparent;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #2196f3;*/
+  padding: 15px;
+}
+h3 {
+  text-align: center;
+  /*line-height: 1;*/
+}
+.output {
+  padding-top: 40px;
+  font-size: 1.17em;
+  font-weight: bolder;
+}
