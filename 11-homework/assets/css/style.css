@@ -10,17 +10,12 @@
   padding: 10px;
 }
 .container-item {
-  /*background: rgba(0, 0, 0, 0.7);*/
   max-width: 30%;
   overflow: auto;
-  /*border: deepskyblue 2px solid transparent;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #2196f3;*/
   padding: 15px;
 }
 h3 {
   text-align: center;
-  /*line-height: 1;*/
 }
 .output {
   padding-top: 40px;
