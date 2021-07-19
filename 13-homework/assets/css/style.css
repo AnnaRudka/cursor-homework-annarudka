@@ -1,0 +1,157 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: rgb(8, 8, 8);
+  font-family: "Lato", sans-serif;
+  font-size: 17px;
+  /* line-height: 25px;*/
+  font-weight: 400;
+  color: #f6f5f5;
+  background-image: url("../images/back.jpg");
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.logo__link {
+  height: 90px;
+  padding: 5px 30px;
+}
+
+.characters-item {
+  flex: 0 0 27%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+}
+
+.content-item {
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  margin: 0 300px;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h3 {
+  font-size: 20px;
+  background: linear-gradient(135deg, #482bee 20%, #e25aae 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.photo {
+  width: 100%;
+}
+
+header,
+.content__list,
+.item__description,
+footer {
+  background-color: black;
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.header__inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100px;
+}
+nav,
+.menu__list {
+  display: flex;
+}
+
+select {
+  background-color: black;
+  color: #f6f5f5;
+  margin-left: 50px;
+  border: 2px solid black;
+}
+
+.menu-item {
+  margin: 0 20px;
+}
+
+.btn__menu,
+.btn-scroll {
+  text-transform: uppercase;
+  color: #f6f5f5;
+  font-size: 18px;
+  line-height: 21px;
+  transition: all 0.5s;
+  border: 2px solid black;
+  background-color: black;
+}
+
+.btn-scroll {
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.scroll-buttons {
+  text-align: center;
+}
+.trasparent {
+  border: 2px solid grey;
+  background-color: grey;
+}
+
+.btn__menu:hover,
+select:hover,
+.btn-scroll:hover {
+  box-shadow: 0 0 15px #2196f3;
+  cursor: pointer;
+}
+
+.btn__menu:active,
+.btn__menu:focus,
+select:active,
+select:focus,
+.btn-scroll:active {
+  border: 2px #2196f3 solid;
+}
+
+.content {
+  margin: 110px 30px 30px 30px;
+}
+
+.characters__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p {
+  font-size: 14px;
+}
+
+.content-item:active {
+  color: #2196f3;
+}
+
+.active {
+  color: #2196f3;
+}
+.content-item:hover {
+  cursor: pointer;
+}

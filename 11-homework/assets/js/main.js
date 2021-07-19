@@ -3,7 +3,7 @@ document.querySelector(".btn1").addEventListener("click", getRandomChinese);
 
 async function getRandomChinese() {
   const length = document.querySelector("#length").value; // Received a length from the user
-  if (length === "") {
+  if (!length) {
     //Сhecked if the value of length is valid
     output.innerHTML = "Please enter a value";
   } else {

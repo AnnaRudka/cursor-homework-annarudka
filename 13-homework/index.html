@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>AnnaRudka_Homework#13</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div>
+          <div class="header__inner">
+            <a href="#" class="logo">
+              <img class="logo__link" src="assets/images/51632.jpg" alt="Logo"></a>
+            <nav>
+              <ul class="menu__list" id="menu__list">
+                <li class="menu-item"><button class="btn__menu" data-component="planets">Planets</button></li>
+                <li class="menu-item"><button class="btn__menu" data-component="people">Characters</button></li>
+              </ul>
+              <select class="select" id="episode">
+                <option value="1">Star Wars: A New Hope</option>
+                <option value="2">Star Wars: The Empire Strikes Back</option>
+                <option value="3">Star Wars: Return of the Jedi</option>
+                <option value="4">Star Wars: The Phantom Menace</option>
+                <option value="5">Star Wars: Attack of the Clones</option>
+                <option value="6">Star Wars: Revenge of the Sith</option>
+              </select>
+              <select class="select" id="language">
+                <option value="english" selected>English</option>
+                <option value="wookiee">Wookiee</option>
+              </select>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <!--Content-->
+      <section class="content">
+        <div id="scroll-buttons" class="scroll-buttons"></div>
+        <div id="planets" class="planets__list"></div>
+        <div id ="characters" class="characters__list"></div>
+      </section>
+    
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
