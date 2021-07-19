@@ -99,7 +99,7 @@ const createCharacterCard = (url) => {
     }
 
     return (characters.innerHTML += `<div class="characters-item"><img class="photo" src="${photo}"/><h3> ${character.name}</h3> 
-			<p>Date of birth: ${character.year}</p> <p>${character.index}</p>
+			<p>Date of birth: ${character.year}</p>
 			<p>Gender: ${genderCode}</p></div>`);
   });
 };
