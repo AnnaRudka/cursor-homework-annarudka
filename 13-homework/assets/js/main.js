@@ -1,21 +1,31 @@
 const planets = document.getElementById("planets");
 const characters = document.getElementById("characters");
-const episode = document.getElementById("episode").value;
+const episodeBtn = document.getElementById("episode");
+const episode = episodeBtn.value;
+const languageBtn = document.getElementById("language");
 const buttons = document.getElementById("scroll-buttons");
 let page = 1;
 const wookiee = "?format=wookiee";
+
+episodeBtn.addEventListener("change", () => {
+  languageBtn.value === "english" ? createCharacters() : createCharacters(1);
+});
+languageBtn.addEventListener("change", () => {
+  languageBtn.value === "english" ? createCharacters() : createCharacters(1);
+});
 
 function createMenu() {
   document.querySelectorAll(".btn__menu").forEach((menuItem) => {
     menuItem.addEventListener("click", (e) => {
       const btn = e.target.dataset.component;
-      const language = document.getElementById("language").value;
       switch (btn) {
         case "planets":
           createPlanets(1);
           break;
         case "people":
-          language === "english" ? createCharacters() : createCharacters(1);
+          languageBtn.value === "english"
+            ? createCharacters()
+            : createCharacters(1);
           break;
       }
     });
@@ -38,14 +48,20 @@ const createPlanetsList = () =>
 
 const createPlanets = (page) => {
   characters.innerHTML = "";
-  getPlanets(page).then((data) => {
-    planetsList = data.results;
-    planets.innerHTML = createPlanetsList();
-    buttons.innerHTML =
-      '<button id="btn-prev" class="btn-scroll">PREVIOUS</button><button id="btn-next" class="btn-scroll">NEXT</button>';
-    document.getElementById("btn-prev").addEventListener("click", onPrevClick);
-    document.getElementById("btn-next").addEventListener("click", onNextClick);
-  });
+  getPlanets(page)
+    .then((data) => {
+      planetsList = data.results;
+      planets.innerHTML = createPlanetsList();
+      buttons.innerHTML =
+        '<button id="btn-prev" class="btn-scroll">PREVIOUS</button><button id="btn-next" class="btn-scroll">NEXT</button>';
+      document
+        .getElementById("btn-prev")
+        .addEventListener("click", onPrevClick);
+      document
+        .getElementById("btn-next")
+        .addEventListener("click", onNextClick);
+    })
+    .catch(console.log());
 };
 
 function onPrevClick() {
@@ -132,14 +148,15 @@ const createCharacterCardWookiee = (url) => {
 const createCharacters = (withWookiee) => {
   buttons.innerHTML = "";
   planets.innerHTML = "";
-  characters.innerHTML = "Characters list loading...";
-  getPeople(episode).then((data) => {
-    urlList = data.characters;
-    characters.innerHTML = "";
-    if (withWookiee) {
-      return urlList.map((url) => createCharacterCardWookiee(url));
-    } else {
-      return urlList.map((url) => createCharacterCard(url));
-    }
-  });
+  getPeople(episode)
+    .then((data) => {
+      urlList = data.characters;
+      characters.innerHTML = "";
+      if (withWookiee) {
+        return urlList.map((url) => createCharacterCardWookiee(url));
+      } else {
+        return urlList.map((url) => createCharacterCard(url));
+      }
+    })
+    .catch(console.log());
 };
