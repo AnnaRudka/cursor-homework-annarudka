@@ -1,6 +1,4 @@
 import "../css/style.css";
-import "../css/sw.css";
-import "../images/fon.jpg";
 import getAveragePrice from "./function1";
 import getNumbersSum from "./function2";
 import getCorrectName from "./function3";
@@ -11,6 +9,8 @@ import { getAverageTaxes, getMiddleTaxes } from "./function7";
 import Student from "./function8";
 import generateBlocks from "./function9";
 import getRandomChinese from "./function11";
+import { getGeneratorValue, startGenerator } from "./function14";
+import { createPlanets, onPrevClick, onNextClick } from "./function13";
 import "regenerator-runtime/runtime";
 
 // 1 homework
@@ -55,29 +55,18 @@ console.log(orest.getAverageMark());
 //9 homework
 document.querySelector(".btn9").addEventListener("click", generateBlocks);
 
-// // 10 homework
-// const keys = document.querySelectorAll(".key");
-// keys.forEach((key) => key.addEventListener("transitionend", removeTransition));
-// keys.forEach((key) => key.addEventListener("click", playSoundMouse));
-// window.addEventListener("keydown", playSoundKeyboard);
-
 //11 homework
 document.querySelector(".btn11").addEventListener("click", getRandomChinese);
 
-// //13 homework
+//13 homework
 
-// const planets = document.getElementById("planets");
-// const buttons = document.getElementById("scroll-buttons");
-// let page = 1;
+document.querySelector(".btn13").addEventListener("click", createPlanets(1));
+document.getElementById("btnPrev").addEventListener("click", onPrevClick);
+document.getElementById("btnNext").addEventListener("click", onNextClick);
 
-// document.querySelector(".btn13").addEventListener("click", createPlanets(1));
+//14 homework
 
-// // // 14 homework
-
-// const idGeneratorOutput = document.getElementById("igValue");
-// let idGenerator = createIdGenerator();
-
-// document
-//   .getElementById("btn-next")
-//   .addEventListener("click", getGeneratorValue);
-// document.getElementById("btn-start").addEventListener("click", startGenerator);
+document
+  .getElementById("btn-next")
+  .addEventListener("click", getGeneratorValue);
+document.getElementById("btn-start").addEventListener("click", startGenerator);

@@ -1,4 +1,5 @@
 // Function from 11 homework
+import "regenerator-runtime/runtime";
 
 export default async function getRandomChinese() {
   const length = document.querySelector("#length").value; // Received a length from the user
