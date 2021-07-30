@@ -11,6 +11,7 @@
   "author": "Anna Rudka",
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "regenerator-runtime": "^0.13.9"
   },
   "devDependencies": {

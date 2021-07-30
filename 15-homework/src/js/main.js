@@ -1,5 +1,4 @@
 import "../css/style.css";
-import "../css/cube.css";
 import "../css/sw.css";
 import "../images/fon.jpg";
 import getAveragePrice from "./function1";
@@ -10,6 +9,9 @@ import getOnlyGoodWords from "./function5";
 import getNumberOfLetters from "./function6";
 import { getAverageTaxes, getMiddleTaxes } from "./function7";
 import Student from "./function8";
+import generateBlocks from "./function9";
+import getRandomChinese from "./function11";
+import "regenerator-runtime/runtime";
 
 // 1 homework
 
@@ -33,9 +35,6 @@ document.querySelector(".btn6").addEventListener("click", getNumberOfLetters);
 
 document.querySelector(".btn7").addEventListener("click", getAverageTaxes);
 
-//9 homework
-document.querySelector(".btn9").addEventListener("click", generateBlocks);
-
 // 8 homework
 console.log("8 homework");
 const orest = new Student("Harvard University", 1, "Orest Rudka");
@@ -53,24 +52,27 @@ orest.studentMarks = 4;
 orest.studentMarks;
 console.log(orest.getAverageMark());
 
-// 10 homework
-const keys = document.querySelectorAll(".key");
-keys.forEach((key) => key.addEventListener("transitionend", removeTransition));
-keys.forEach((key) => key.addEventListener("click", playSoundMouse));
-window.addEventListener("keydown", playSoundKeyboard);
+//9 homework
+document.querySelector(".btn9").addEventListener("click", generateBlocks);
+
+// // 10 homework
+// const keys = document.querySelectorAll(".key");
+// keys.forEach((key) => key.addEventListener("transitionend", removeTransition));
+// keys.forEach((key) => key.addEventListener("click", playSoundMouse));
+// window.addEventListener("keydown", playSoundKeyboard);
 
 //11 homework
-document.querySelector(".btn8").addEventListener("click", getRandomChinese);
+document.querySelector(".btn11").addEventListener("click", getRandomChinese);
 
-//13 homework
+// //13 homework
 
-const planets = document.getElementById("planets");
-const buttons = document.getElementById("scroll-buttons");
-let page = 1;
+// const planets = document.getElementById("planets");
+// const buttons = document.getElementById("scroll-buttons");
+// let page = 1;
 
-document.querySelector(".btn13").addEventListener("click", createPlanets(1));
+// document.querySelector(".btn13").addEventListener("click", createPlanets(1));
 
-// // 14 homework
+// // // 14 homework
 
 // const idGeneratorOutput = document.getElementById("igValue");
 // let idGenerator = createIdGenerator();

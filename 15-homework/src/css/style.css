@@ -1,5 +1,5 @@
 body {
-  background-image: url("../images/fon.jpg");
+  /* background-image: url("../images/fon.jpg"); */
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
@@ -32,4 +32,8 @@ h3 {
   font-size: 18px;
   font-weight: 600;
   padding: 10px;
+}
+.output9 {
+  display: flex;
+  flex-wrap: wrap;
 }
